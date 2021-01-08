@@ -18,7 +18,7 @@ renderNews();
 
 var hyperlink = $(".hyperlink");
 var link = [
-    "https://https://www.w3schools.com/",
+    "https://www.w3schools.com/",
     "https://developer.mozilla.org/en-US/",
     "http://stackoverflow.com/",
     "https://github.com/"
