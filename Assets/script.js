@@ -6,8 +6,10 @@ function renderNews () {
         cors: true
       })
         .then(function(response) {
-            $("#articleTitlte").text(response.articles[0].title);
+            $("#articleTitle").text(response.articles[0].title);
+            $("#articleTitle").attr("href", response.articles[0].url);
             $("#articlePreview").attr("src", response.articles[0].urlToImage);
+            $("#previewLink").attr("href", response.articles[0].urlToImage);
             $("#articleContent").text(response.articles[0].description);
     });
 }
