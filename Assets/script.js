@@ -16,10 +16,13 @@ function renderNews () {
 
 renderNews();
 
-function saveNotes () {
+var noteList;
+
+function saveNotes (event) {
+    event.preventDefault();
     var noteTitle = $("#noteTitle");
     var noteBody = $("#noteBody");
-    var noteList = [];
+    noteList = [];
     if (localStorage.getItem("noteList")) {
         noteList = JSON.parse(localStorage.getItem("noteList"));
     }
@@ -29,15 +32,34 @@ function saveNotes () {
         localStorage.setItem("noteList",JSON.stringify(noteList));
         localStorage.setItem(noteTitle.val(),noteBody.val());
     }
+    console.log(noteList);
+    renderNoteList(noteList);
+    $("button").on("click", loadNote);
+}
+
+function loadNote (event) {
+    console.log("hi");
+    var i = $(this).data("index");
+    var noteTitle = $("#noteTitle");
+    var noteBody = $("#noteBody");
+    noteTitle.val(noteList[i]);
+    console.log(noteList[i]);
+    console.log(localStorage.getItem(noteList[i]));
+    noteBody.val(localStorage.getItem(noteList[i]));
 }
 
 function renderNoteList (noteList) {
+    console.log(noteList);
     var noteTitle = $("#noteTitle");
     var noteBody = $("#noteBody");
     for (var i=0; i<noteList.length; i++) {
-        var buttonEl = $("<button class='button is-primary'>");
+        var buttonEl = $("<button>");
+        buttonEl.addClass("button is-primary");
         buttonEl.text(noteList[i]);
-        buttonEl.on("click",);
+        buttonEl.addClass("noteButtons");
+        buttonEl.attr("data-index", i);
+        // buttonEl.on("click", loadNote(noteList,i));
+        $("#buttonArea").append(buttonEl);
     }
 }
 
