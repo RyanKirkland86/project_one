@@ -1,16 +1,16 @@
 function renderNews () {
-    var queryURL = "http://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?category=general&apiKey=6f6c9616dafb4bc3bad81c87458b32c9";
+    var queryURL = "http://cors-anywhere.herokuapp.com/http://api.mediastack.com/v1/news?access_key=c0567e5c2a6bf20ad545f455d2bf2c47";
     $.ajax({
         url: queryURL,
         method: "GET",
-        cors: true
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
       })
         .then(function(response) {
-            $("#articleTitle").text(response.articles[0].title);
-            $("#articleTitle").attr("href", response.articles[0].url);
-            $("#articlePreview").attr("src", response.articles[0].urlToImage);
-            $("#previewLink").attr("href", response.articles[0].urlToImage);
-            $("#articleContent").text(response.articles[0].description);
+            $("#articleTitle").text(response.data[0].title);
+            $("#articleTitle").attr("href", response.data[0].url);
+            $("#articlePreview").attr("src", response.data[0].image);
+            $("#previewLink").attr("href", response.data[0].image);
+            $("#articleContent").text(response.data[0].description);
     });
 }
 
