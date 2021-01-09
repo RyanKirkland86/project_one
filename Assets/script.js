@@ -2,18 +2,18 @@
 // ===================================================================================
 
 function renderNews () {
-    var queryURL = "http://cors-anywhere.herokuapp.com/http://api.mediastack.com/v1/news?access_key=c0567e5c2a6bf20ad545f455d2bf2c47";
+    var queryURL = "https://api.nytimes.com/svc/topstories/v2/science.json?api-key=rBdT9Ta3VCBY52rY43X4LfdNrg58vknE";
     $.ajax({
         url: queryURL,
         method: "GET",
         headers: { 'X-Requested-With': 'XMLHttpRequest' }
       })
         .then(function(response) {
-            $("#articleTitle").text(response.data[0].title);
-            $("#articleTitle").attr("href", response.data[0].url);
-            $("#articlePreview").attr("src", response.data[0].image);
-            $("#previewLink").attr("href", response.data[0].image);
-            $("#articleContent").text(response.data[0].description);
+            $("#articleTitle").text(response.results[0].title);
+            $("#articleTitle").attr("href", response.results[0].url);
+            $("#articlePreview").attr("src", response.results[0].multimedia[0].url);
+            $("#previewLink").attr("href", response.results[0].multimedia[0].url);
+            $("#articleContent").text(response.results[0].abstract);
     });
 }
 
@@ -47,7 +47,6 @@ function getJoke () {
         method: "GET",
     })
         .then(function(response) {
-            console.log(response);
             $("#jokeSetup").text(response.setup);
             $("#jokeDelivery").text(response.delivery);
         });
@@ -55,7 +54,6 @@ function getJoke () {
 
 getJoke();
 
-// ===================================================================================
 
 
 var userInput;
@@ -101,4 +99,4 @@ function searchWeather() {
     })
 }
 
-// ===================================================================================
+
