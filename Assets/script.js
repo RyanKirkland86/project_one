@@ -1,3 +1,6 @@
+
+// ===================================================================================
+
 function renderNews () {
     var queryURL = "https://api.nytimes.com/svc/topstories/v2/science.json?api-key=rBdT9Ta3VCBY52rY43X4LfdNrg58vknE";
     $.ajax({
@@ -16,6 +19,8 @@ function renderNews () {
 
 renderNews();
 
+// ===================================================================================
+
 var hyperlink = $(".hyperlink");
 var link = [
     "https://www.w3schools.com/",
@@ -32,6 +37,9 @@ function reference() {
 }
 reference();
 
+// ===================================================================================
+ 
+
 function getJoke () {
     var queryURL = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=racist,sexist,explicit&type=twopart";
     $.ajax({
@@ -45,4 +53,50 @@ function getJoke () {
 }
 
 getJoke();
+
+
+
+var userInput;
+var buttonPress = $(".userSearch");
+var localKey = 0;
+
+buttonPress.on("click", function () {
+    userInput = $(".inputSearch").val();
+    localStorage.setItem(localKey, userInput);
+    console.log(userInput);
+    searchWeather();
+
+})
+
+function searchWeather() {
+    var apiKey = "9975a2d1ef4e7fb59bbba6eef797ea85"
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&units=imperial&appid=" + apiKey
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+        var columnOne = $(".columnOne");
+        var columnTwo = $(".columnTwo");
+        var columnThree = $(".columnThree");
+
+        columnOne.append("<p>" + "<strong>" + (moment().format("M/DD/YY")) + "</strong>");
+        $(".columnone").attr("src", "http://openweathermap.org/img/wn/"+ response.list[0].weather[0].icon + ".png");
+        // need to add weather icons ^code not correct for icon. need to address
+        columnOne.append("<p>" + "Temperature: " + response.list[0].main.temp + "</p>");
+        columnOne.append("<p>" + "Humidity: " + response.list[0].main.humidity + "</p>");
+        // need to add weather icons
+        columnTwo.append("<p>" + "<strong>" + (moment().format("M/DD/YY")) + "</strong>")
+        columnTwo.append("<p>" + "Temperature: " + response.list[1].main.temp + "</p>");
+        columnTwo.append("<p>" + "Humidity: " + response.list[1].main.humidity + "</p>");
+        // need to add weather icons
+        columnThree.append("<p>" + "<strong>" + (moment().format("M/DD/YY")) + "</strong>")
+        columnThree.append("<p>" + "Temperature: " + response.list[2].main.temp + "</p>");
+        columnThree.append("<p>" + "Humidity: " + response.list[2].main.humidity + "</p>");
+
+
+    })
+}
+
 
