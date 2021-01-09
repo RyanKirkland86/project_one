@@ -39,10 +39,21 @@ function getJoke () {
         method: "GET",
     })
         .then(function(response) {
-            console.log(response);
             $("#jokeSetup").text(response.setup);
             $("#jokeDelivery").text(response.delivery);
         });
 }
 
 getJoke();
+
+function getQuote () {
+    var queryURL = "https://zenquotes.io/api/today";
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+    })
+        .then(function(response) {
+            console.log(response)
+        })
+}
+getQuote();
