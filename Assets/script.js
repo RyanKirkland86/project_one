@@ -40,8 +40,8 @@ function getJoke () {
     })
         .then(function(response) {
             console.log(response);
-            $("#jokeSetup").text(response.setup[0]);
-            $("#jokeDelivery").text(response.delivery[0]);
+            $("#jokeSetup").text(response.setup);
+            $("#jokeDelivery").text(response.delivery);
         });
 }
 
