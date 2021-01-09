@@ -31,3 +31,18 @@ function reference() {
         hyperlink.append("<a href=" + link[3] + ">" + "<img src='Assets/github.png' width='200' height = '132'" + "</a>");
 }
 reference();
+
+function getJoke () {
+    var queryURL = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=racist,sexist,explicit&type=twopart";
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+    })
+        .then(function(response) {
+            console.log(response);
+            $("#jokeSetup").text(response.setup[0]);
+            $("#jokeDelivery").text(response.delivery[0]);
+        });
+}
+
+getJoke();
