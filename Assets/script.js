@@ -16,6 +16,33 @@ function renderNews () {
 
 renderNews();
 
+function saveNotes () {
+    var noteTitle = $("#noteTitle");
+    var noteBody = $("#noteBody");
+    var noteList = [];
+    if (localStorage.getItem("noteList")) {
+        noteList = JSON.parse(localStorage.getItem("noteList"));
+    }
+    if (!noteList.includes(noteTitle.val())) {
+        noteList.push(noteTitle.val());
+        console.log(noteList);
+        localStorage.setItem("noteList",JSON.stringify(noteList));
+        localStorage.setItem(noteTitle.val(),noteBody.val());
+    }
+}
+
+function renderNoteList (noteList) {
+    var noteTitle = $("#noteTitle");
+    var noteBody = $("#noteBody");
+    for (var i=0; i<noteList.length; i++) {
+        var buttonEl = $("<button class='button is-primary'>");
+        buttonEl.text(noteList[i]);
+        buttonEl.on("click",);
+    }
+}
+
+$("#saveButton").on("click", saveNotes);
+
 var hyperlink = $(".hyperlink");
 var link = [
     "https://https://www.w3schools.com/",
