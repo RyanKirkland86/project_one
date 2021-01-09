@@ -46,3 +46,33 @@ function getJoke () {
 }
 
 getJoke();
+
+// ===================================================================================
+var userInput;
+var buttonPress = $(".userSearch");
+var localKey = 0;
+
+buttonPress.on("click", function () {
+    userInput = $(".inputSearch").val();
+    localStorage.setItem(localKey, userInput);
+    console.log(userInput);
+    searchWeather();
+
+})
+
+function searchWeather() {
+    var apiKey = "9975a2d1ef4e7fb59bbba6eef797ea85"
+    console.log(userInput);
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&appid=" + apiKey + "&units=imperial";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+        var cityName = $(".columnOne");
+        cityName.append("<p>" + userInput + "" + (moment().format("MM/MD/YY")))
+        cityName.append("<p>" + "Temperature: " + response.main.temp + "</p>");
+
+    })
+}
