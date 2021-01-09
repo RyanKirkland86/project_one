@@ -1,5 +1,5 @@
 function renderNews () {
-    var queryURL = "http://cors-anywhere.herokuapp.com/http://newsapi.org/v2/top-headlines?category=technology&apiKey=6f6c9616dafb4bc3bad81c87458b32c9";
+    var queryURL = "http://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?category=general&apiKey=6f6c9616dafb4bc3bad81c87458b32c9";
     $.ajax({
         url: queryURL,
         method: "GET",
