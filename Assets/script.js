@@ -140,16 +140,18 @@ function searchWeather() {
         var columnThree = $(".columnThree");
 
         columnOne.append("<p>" + "<strong>" + (moment().format("M/DD/YY")) + "</strong>");
-        $(".columnone").attr("src", "http://openweathermap.org/img/wn/"+ response.list[0].weather[0].icon + ".png");
+        columnOne.append("<img id='image1'>");
+        $("#image1").attr("src", "http://openweathermap.org/img/wn/"+ response.list[0].weather[0].icon + ".png");
         // need to add weather icons ^code not correct for icon. need to address
         columnOne.append("<p>" + "Temperature: " + response.list[0].main.temp + "</p>");
         columnOne.append("<p>" + "Humidity: " + response.list[0].main.humidity + "</p>");
         // need to add weather icons
-        columnTwo.append("<p>" + "<strong>" + (moment().format("M/DD/YY")) + "</strong>")
+        columnTwo.append("<p>" + "<strong>" + (moment().format("M/DD/YY")) + "</strong>");
         columnTwo.append("<p>" + "Temperature: " + response.list[1].main.temp + "</p>");
         columnTwo.append("<p>" + "Humidity: " + response.list[1].main.humidity + "</p>");
+
         // need to add weather icons
-        columnThree.append("<p>" + "<strong>" + (moment().format("M/DD/YY")) + "</strong>")
+        columnThree.append("<p>" + "<strong>" + (moment().format("M/DD/YY")) + "</strong>");
         columnThree.append("<p>" + "Temperature: " + response.list[2].main.temp + "</p>");
         columnThree.append("<p>" + "Humidity: " + response.list[2].main.humidity + "</p>");
 
