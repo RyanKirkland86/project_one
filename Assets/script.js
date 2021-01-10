@@ -1,26 +1,37 @@
 
 // ===================================================================================
+// News Section
 
 function renderNews () {
-    var queryURL = "https://api.nytimes.com/svc/topstories/v2/science.json?api-key=rBdT9Ta3VCBY52rY43X4LfdNrg58vknE";
+    var queryURL = "https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=rBdT9Ta3VCBY52rY43X4LfdNrg58vknE";
     $.ajax({
         url: queryURL,
         method: "GET",
         headers: { 'X-Requested-With': 'XMLHttpRequest' }
       })
         .then(function(response) {
-            $("#articleTitle").text(response.results[0].title);
-            $("#articleTitle").attr("href", response.results[0].url);
-            $("#articlePreview").attr("src", response.results[0].multimedia[0].url);
-            $("#previewLink").attr("href", response.results[0].multimedia[0].url);
-            $("#articleContent").text(response.results[0].abstract);
+            // This logic is to randomly select a news story, and make sure it hasn't been selected already.
+            var randResultsList = [];
+            for (var i=0; i<3; i++) {
+                index = Math.floor(Math.random()*response.num_results);
+                while (randResultsList.includes(index)) {
+                    index = Math.floor(Math.random()*response.num_results);
+                }
+                randResultsList.push(index);
+                // Populate fields
+                $("#articleTitle"+(i+1)).text(response.results[index].title);
+                $("#articleTitle"+(i+1)).attr("href", response.results[index].url);
+                $("#articlePreview"+(i+1)).attr("src", response.results[index].multimedia[0].url);
+                $("#previewLink"+(i+1)).attr("href", response.results[index].multimedia[0].url);
+                $("#articleContent"+(i+1)).text(response.results[index].abstract);
+            }    
     });
 }
 
 renderNews();
 
 // ===================================================================================
-
+// Notes Section
 var noteList = [];
 
 function saveNotes (event) {
@@ -88,7 +99,7 @@ $("#clearButton").on("click", clearNotes);
 $("#newButton").on("click", newNote);
 
 // ===================================================================================
-
+// Reference Section
 
 var hyperlink = $(".hyperlink");
 var link = [
@@ -107,7 +118,7 @@ function reference() {
 reference();
 
 // ===================================================================================
- 
+//  Make You Smile Section
 
 function getJoke () {
     var queryURL = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=racist,sexist,explicit&type=twopart";
@@ -125,6 +136,7 @@ getJoke();
 
 
 //=============================================================================================
+// Inspirational Quotes
 
 //Code for fix of cross-origin error.
 jQuery.ajaxPrefilter(function (options) {
@@ -151,6 +163,7 @@ function getQuote () {
 getQuote();
 
 //============================================================================================
+// Gif
 
 var userPick;
 var gifSearch = $(".userPick");
@@ -181,7 +194,7 @@ function getGif() {
 }
 
 // ===================================================================================
-
+// Weather Section
 
 var userInput;
 var buttonPress = $(".userSearch");

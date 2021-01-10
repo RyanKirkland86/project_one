@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="Assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
@@ -34,6 +35,15 @@
                 
         </div>
     </section>
+
+</head>
+
+
+<body>
+    <!-- REFERENCE LINKS, WEATHER -->
+    <div class="tile is-ancestor">
+        <!-- REFERENCE LINKS -->
+        <div class="tile is-parent">
     <div class="tile is-ancestor">
         <div class="tile is-parent has-text-centered">
             <article class="tile is-child box">
@@ -44,6 +54,7 @@
 
             </article>
         </div>
+        <!-- WEATHER -->
         <div class="tile is-parent">
             <article class="tile is-child box has-text-centered">
                 <p class="title weather">Weather <input class="inputsm inputSearch" type="text" placeholder="">
@@ -68,9 +79,12 @@
         </div>
     </div>
 
+    <!-- QUOTES, NOTES, NEWS, SMILE -->
     <div class="tile is-ancestor">
         <div class="tile is-vertical is-8">
             <div class="tile">
+                <!-- INSPIRATIONAL QUOTES -->
+                <div class="tile is-parent is-vertical is-mobile">
                 <div class="tile is-parent is-vertical has-text-centered">
                     <article class="tile is-child box">
                         <p class="title quote" id="qotdQ"></p>
@@ -78,6 +92,7 @@
                         <p>Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a></p>
                         </article>
                 </div>
+                <!-- NOTES -->
                 <div class="tile is-parent">
                     <article class="tile is-child is-mobile box">
                         <p class="title notes">Notes</p>
@@ -91,6 +106,7 @@
                     </article>
                 </div>
             </div>
+            <!-- SOMETHING TO SMILE ABOUT -->
             <div class="tile is-parent">
                 <article class="tile is-child box has-text-centered">
                     <p class="title be-happy">Something to Smile About!</p>
@@ -110,25 +126,58 @@
                 </article>
             </div>
         </div>
+
+        <!-- NEWS SECTION -->
         <div class="tile is-parent">
             <article class="tile is-child box has-text-centered">
                 <div class="content">
-                    <p class="title news">News Section</p>
-                    <p class="subtitle">articles to be filled in. carousel possibly?</p>
+                    <p class="title news">Tech News</p>
                     <div class="content">
-                        <p class="subtitle">
-                            <a id="articleTitle"></a>
-                        </p>
-                        <a id="previewLink">
-                            <img id="articlePreview" alt="Preview" />
-                        </a>
-                        <div class="content" id="articleContent"></div>
-
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner carousel-dark">
+                              <div class="carousel-item active">
+                                <p class="subtitle">
+                                    <a id="articleTitle1"></a>
+                                </p>
+                                <a id="previewLink1">
+                                    <img class="carouselImage" id="articlePreview1" alt="Preview1" />
+                                </a>
+                                <div class="content" id="articleContent1"></div>
+                              </div>
+                              <div class="carousel-item">
+                                <p class="subtitle">
+                                    <a id="articleTitle2"></a>
+                                </p>
+                                <a id="previewLink2">
+                                    <img class="carouselImage" id="articlePreview2" alt="Preview2" />
+                                </a>
+                                <div class="content" id="articleContent2"></div>
+                              </div>
+                              <div class="carousel-item">
+                                <p class="subtitle">
+                                    <a id="articleTitle3"></a>
+                                </p>
+                                <a id="previewLink3">
+                                    <img class="carouselImage" id="articlePreview3" alt="Preview3" />
+                                </a>
+                                <div class="content" id="articleContent3"></div>
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </a>
+                          </div>
                     </div>
                 </div>
             </article>
         </div>
     </div>
+    <!-- YOUTUBE PROGRAMMER'S PLAYLIST -->
     <div class="tile is-parent is">
         <article class="tile is-child box has-text-centered">
             <p class="title youtube">Youtube Videos</p>
@@ -140,6 +189,7 @@
     </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="Assets/script.js"></script>
 
