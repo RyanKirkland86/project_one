@@ -19,6 +19,7 @@ function renderNews () {
 
 renderNews();
 
+// ===================================================================================
 
 var noteList;
 
@@ -112,6 +113,7 @@ function getJoke () {
 
 getJoke();
 
+
 //=============================================================================================
 
 //Code for fix of cross-origin error.
@@ -140,11 +142,16 @@ getQuote();
 
 //============================================================================================
 
+
+// ===================================================================================
+
+
 var userInput;
 var buttonPress = $(".userSearch");
 var localKey = 0;
 
 buttonPress.on("click", function () {
+   
     userInput = $(".inputSearch").val();
     localStorage.setItem(localKey, userInput);
     console.log(userInput);
@@ -164,20 +171,25 @@ function searchWeather() {
         var columnOne = $(".columnOne");
         var columnTwo = $(".columnTwo");
         var columnThree = $(".columnThree");
+        columnOne.empty();
+        columnTwo.empty();
+        columnThree.empty();
 
         columnOne.append("<p>" + "<strong>" + (moment().format("M/DD/YY")) + "</strong>");
         columnOne.append("<img id='image1'>");
         $("#image1").attr("src", "http://openweathermap.org/img/wn/"+ response.list[0].weather[0].icon + ".png");
-        // need to add weather icons ^code not correct for icon. need to address
         columnOne.append("<p>" + "Temperature: " + response.list[0].main.temp + "</p>");
         columnOne.append("<p>" + "Humidity: " + response.list[0].main.humidity + "</p>");
-        // need to add weather icons
-        columnTwo.append("<p>" + "<strong>" + (moment().format("M/DD/YY")) + "</strong>");
+
+        columnTwo.append("<p>" + "<strong>" + (moment().add(1, 'days').format("M/DD/YY")) + "</strong>");
+        columnTwo.append("<img id='image2'>");
+        $("#image2").attr("src", "http://openweathermap.org/img/wn/"+ response.list[1].weather[0].icon + ".png");
         columnTwo.append("<p>" + "Temperature: " + response.list[1].main.temp + "</p>");
         columnTwo.append("<p>" + "Humidity: " + response.list[1].main.humidity + "</p>");
 
-        // need to add weather icons
-        columnThree.append("<p>" + "<strong>" + (moment().format("M/DD/YY")) + "</strong>");
+        columnThree.append("<p>" + "<strong>" + (moment().add(2, 'days').format("M/DD/YY")) + "</strong>"); 
+        columnThree.append("<img id='image3'>");
+        $("#image3").attr("src", "http://openweathermap.org/img/wn/"+ response.list[2].weather[0].icon + ".png");
         columnThree.append("<p>" + "Temperature: " + response.list[2].main.temp + "</p>");
         columnThree.append("<p>" + "Humidity: " + response.list[2].main.humidity + "</p>");
 
@@ -185,4 +197,5 @@ function searchWeather() {
     })
 }
 
+// ===================================================================================
 
