@@ -112,7 +112,16 @@ function getJoke () {
 
 getJoke();
 
+//Code for fix of cross-origin error.
+jQuery.ajaxPrefilter(function (options) {
+    if (options.crossDomain && jQuery.support.cors) {
+      options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+    }
+  });
 
+function getQuote () {
+
+}
 
 var userInput;
 var buttonPress = $(".userSearch");
