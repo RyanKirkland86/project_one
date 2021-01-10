@@ -133,7 +133,7 @@ function getQuote () {
 //Also don't forget to add Zen Quote attribution to HTML!
         .then(function(response) {
             var res = JSON.parse(response);
-            $("#qotdQ").html(res[0].q);
+            $("#qotdQ").text(res[0].q);
             $("#qotdA").text(res[0].a);
         });
 }
@@ -141,6 +141,18 @@ function getQuote () {
 getQuote();
 
 //============================================================================================
+
+var userPick;
+var gifSearch = $(".userPick");
+var gifKey = 0;
+
+gifSearch.on("click", function () {
+    userPick = $(".gifSearch").val();
+    localStorage.setItem(gifKey, userPick);
+    console.log(userPick);
+    getGif();
+})
+
 
 
 // ===================================================================================
