@@ -34,7 +34,8 @@ function saveNotes (event) {
     }
     console.log(noteList);
     renderNoteList(noteList);
-    $("button").on("click", loadNote);
+    $(".noteButtons").on("click", loadNote);
+    newNote();
 }
 
 function loadNote (event) {
@@ -48,10 +49,16 @@ function loadNote (event) {
     noteBody.val(localStorage.getItem(noteList[i]));
 }
 
+function newNote () {
+    $("#noteTitle").val("");
+    $("#noteBody").val("");
+}
+
 function renderNoteList (noteList) {
     console.log(noteList);
     var noteTitle = $("#noteTitle");
     var noteBody = $("#noteBody");
+    $("#buttonArea").empty();
     for (var i=0; i<noteList.length; i++) {
         var buttonEl = $("<button>");
         buttonEl.addClass("button is-primary");
