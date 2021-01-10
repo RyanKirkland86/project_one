@@ -9,6 +9,7 @@ function renderNews () {
         headers: { 'X-Requested-With': 'XMLHttpRequest' }
       })
         .then(function(response) {
+            // This logic is to randomly select a news story, and make sure it hasn't been selected already.
             var randResultsList = [];
             for (var i=0; i<3; i++) {
                 index = Math.floor(Math.random()*response.num_results);
