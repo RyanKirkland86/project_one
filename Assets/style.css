@@ -27,3 +27,27 @@ body {
 .document {
     align-content:center;
 }
+
+.columnOne {
+    background: skyblue;
+    border-style: hidden;
+    color: black;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.columnTwo {
+    background: skyblue;
+    border-style: hidden;
+    color: black;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.columnThree {
+    background: skyblue;
+    border-style: hidden;
+    color: black;
+    margin-left: 7%;
+    margin-right: 7%;
+}
