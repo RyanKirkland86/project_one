@@ -125,11 +125,13 @@ function getQuote () {
         url: queryURL,
         method: "GET",
     })
+//Need to add HTML modifiers for Quote of the Day section. Where do we want it?
         .then(function(response) {
             console.log(response);
         });
 }
- getQuote();
+
+getQuote();
 
 var userInput;
 var buttonPress = $(".userSearch");
