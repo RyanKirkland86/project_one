@@ -1,3 +1,15 @@
+
+#noteTitle {
+    width:80%;
+}
+#saveButton {
+    position: relative;
+    left: 5px;
+    width:15%;
+}
+.noteButtons {
+    margin: 5px;
+=======
 .document {
     align-content:center
 }
