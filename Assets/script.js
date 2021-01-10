@@ -112,6 +112,8 @@ function getJoke () {
 
 getJoke();
 
+//=============================================================================================
+
 //Code for fix of cross-origin error.
 jQuery.ajaxPrefilter(function (options) {
     if (options.crossDomain && jQuery.support.cors) {
@@ -126,12 +128,15 @@ function getQuote () {
         method: "GET",
     })
 //Need to add HTML modifiers for Quote of the Day section. Where do we want it?
+//Also don't forget to add Zen Quote attribution to HTML!
         .then(function(response) {
             console.log(response);
         });
 }
 
 getQuote();
+
+//============================================================================================
 
 var userInput;
 var buttonPress = $(".userSearch");
