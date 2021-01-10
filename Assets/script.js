@@ -155,12 +155,43 @@ function getQuote () {
 //Also don't forget to add Zen Quote attribution to HTML!
         .then(function(response) {
             var res = JSON.parse(response);
-            $("#qotdQ").html(res[0].q);
+            $("#qotdQ").text(res[0].q);
             $("#qotdA").text(res[0].a);
         });
 }
 
 getQuote();
+
+//============================================================================================
+// Gif
+
+var userPick;
+var gifSearch = $(".userPick");
+var gifKey = 0;
+
+gifSearch.on("click", function () {
+    userPick = $(".gifSearch").val();
+    localStorage.setItem(gifKey, userPick);
+    console.log(userPick);
+    getGif();
+})
+
+function getGif() {
+    var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=wslWpWhssAgYDK6zVXacBDsacT47flr4&tag=" + userPick + "&rating=g";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        var gifBox = $(".gifBox");
+        gifBox.empty();
+        var imageUrl = response.data.image_original_url
+        var randomGif = $("<img>");
+        randomGif.attr("src", imageUrl);
+        randomGif.attr("alt", userPick + " image");
+        $("#gifBox").prepend(randomGif);
+    })
+}
 
 // ===================================================================================
 // Weather Section
@@ -218,3 +249,9 @@ function searchWeather() {
 
 // ===================================================================================
 
+var toggle = $(".toggle");
+
+toggle.on("click", function () {
+    document.body.classList.toggle("darkMode");
+    // $(".tile").addClass("is-dark");
+})
