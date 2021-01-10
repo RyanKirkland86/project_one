@@ -159,6 +159,14 @@ function getGif() {
     $.ajax({
         url: queryURL,
         method: "GET"
+    }).then(function (response) {
+        var gifBox = $(".gifBox");
+        gifBox.empty();
+        var imageUrl = response.data.image_original_url
+        var randomGif = $("<img>");
+        randomGif.attr("src", imageUrl);
+        randomGif.attr("alt", userPick + " image");
+        $("#gifBox").prepend(randomGif);
     })
 }
 
