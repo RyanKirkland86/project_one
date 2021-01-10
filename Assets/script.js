@@ -118,6 +118,7 @@ jQuery.ajaxPrefilter(function (options) {
       options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
     }
   });
+  
 
 function getQuote () {
 
