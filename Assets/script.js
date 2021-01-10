@@ -105,7 +105,6 @@ function getJoke () {
         method: "GET",
     })
         .then(function(response) {
-            console.log(response);
             $("#jokeSetup").text(response.setup);
             $("#jokeDelivery").text(response.delivery);
         });
@@ -132,7 +131,7 @@ function getQuote () {
 //Also don't forget to add Zen Quote attribution to HTML!
         .then(function(response) {
             console.log(response);
-            $("#qotdQ").text(response);
+            $("#qotdQ").text(response.q);
             $("#qotdA").text(response.a);
         });
 }
