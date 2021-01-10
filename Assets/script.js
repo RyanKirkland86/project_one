@@ -113,7 +113,38 @@ function getJoke () {
 
 getJoke();
 
+
+//=============================================================================================
+
+//Code for fix of cross-origin error.
+jQuery.ajaxPrefilter(function (options) {
+    if (options.crossDomain && jQuery.support.cors) {
+      options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+    }
+  });
+
+function getQuote () {
+    var queryURL = "https://zenquotes.io/api/today";
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+    })
+//Need to add HTML modifiers for Quote of the Day section. Where do we want it?
+//Also don't forget to add Zen Quote attribution to HTML!
+        .then(function(response) {
+            console.log(response);
+            $("#qotdQ").text(response.q);
+            $("#qotdA").text(response.a);
+        });
+}
+
+getQuote();
+
+//============================================================================================
+
+
 // ===================================================================================
+
 
 var userInput;
 var buttonPress = $(".userSearch");
