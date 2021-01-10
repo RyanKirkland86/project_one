@@ -2,14 +2,14 @@
 #noteTitle {
     width:80%;
 }
-#saveButton {
+#saveButton, #newButton {
     position: relative;
     left: 5px;
-    width:15%;
+    width:8%;
 }
 .noteButtons {
     margin: 5px;
-=======
+}
 .document {
-    align-content:center
+    align-content:center;
 }

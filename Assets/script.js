@@ -21,36 +21,29 @@ renderNews();
 
 // ===================================================================================
 
-var noteList;
+var noteList = [];
 
 function saveNotes (event) {
     event.preventDefault();
     var noteTitle = $("#noteTitle");
     var noteBody = $("#noteBody");
-    noteList = [];
     if (localStorage.getItem("noteList")) {
         noteList = JSON.parse(localStorage.getItem("noteList"));
     }
     if (!noteList.includes(noteTitle.val())) {
         noteList.push(noteTitle.val());
-        console.log(noteList);
         localStorage.setItem("noteList",JSON.stringify(noteList));
         localStorage.setItem(noteTitle.val(),noteBody.val());
     }
-    console.log(noteList);
     renderNoteList(noteList);
-    $(".noteButtons").on("click", loadNote);
     newNote();
 }
 
 function loadNote (event) {
-    console.log("hi");
     var i = $(this).data("index");
     var noteTitle = $("#noteTitle");
     var noteBody = $("#noteBody");
     noteTitle.val(noteList[i]);
-    console.log(noteList[i]);
-    console.log(localStorage.getItem(noteList[i]));
     noteBody.val(localStorage.getItem(noteList[i]));
 }
 
@@ -60,7 +53,6 @@ function newNote () {
 }
 
 function renderNoteList (noteList) {
-    console.log(noteList);
     var noteTitle = $("#noteTitle");
     var noteBody = $("#noteBody");
     $("#buttonArea").empty();
@@ -73,9 +65,27 @@ function renderNoteList (noteList) {
         // buttonEl.on("click", loadNote(noteList,i));
         $("#buttonArea").append(buttonEl);
     }
+    $(".noteButtons").on("click", loadNote);
 }
 
+function clearNotes () {
+    for (var i=0; i<noteList.length; i++) {
+        localStorage.removeItem(noteList[i]);
+    }
+    noteList=[];
+    localStorage.removeItem("noteList");
+    renderNoteList(noteList);
+    newNote();
+}
+
+if (localStorage.getItem("noteList")) {
+    noteList = JSON.parse(localStorage.getItem("noteList"));
+}
+renderNoteList(noteList);
+
 $("#saveButton").on("click", saveNotes);
+$("#clearButton").on("click", clearNotes);
+$("#newButton").on("click", newNote);
 
 // ===================================================================================
 
