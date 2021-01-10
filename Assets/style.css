@@ -2,14 +2,28 @@
 #noteTitle {
     width:80%;
 }
+
 #saveButton, #newButton {
     position: relative;
     left: 5px;
     width:8%;
 }
+
 .noteButtons {
     margin: 5px;
 }
+
+body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+}
+
+.darkMode {
+    background-color: black;
+    color: white;
+}
+
 .document {
     align-content:center;
 }
