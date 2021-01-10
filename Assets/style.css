@@ -52,5 +52,11 @@ body {
     color: black;
     margin-left: 7%;
     margin-right: 7%;
+}
+
+@media (max-width: 560px) {
+    #youtubeVid {
+        width: 100%;
+    }
     margin-top: 3%;
 }
