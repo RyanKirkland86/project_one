@@ -121,6 +121,8 @@ reference();
 //  Make You Smile Section
 
 function getJoke () {
+//Set search parameters for jokes to exclude anything that is racist, sexist, or NSFW
+//Set joke to be a two part
     var queryURL = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=racist,sexist,explicit&type=twopart";
     $.ajax({
         url: queryURL,
@@ -151,9 +153,9 @@ function getQuote () {
         url: queryURL,
         method: "GET",
     })
-//Need to add HTML modifiers for Quote of the Day section. Where do we want it?
 //Also don't forget to add Zen Quote attribution to HTML!
         .then(function(response) {
+//Response is a string, so we need to parse
             var res = JSON.parse(response);
             $("#qotdQ").text(res[0].q);
             $("#qotdA").text(res[0].a);
