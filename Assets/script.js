@@ -1,5 +1,6 @@
 
 // ===================================================================================
+// News Section
 
 function renderNews () {
     var queryURL = "https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=rBdT9Ta3VCBY52rY43X4LfdNrg58vknE";
@@ -17,7 +18,7 @@ function renderNews () {
                     index = Math.floor(Math.random()*response.num_results);
                 }
                 randResultsList.push(index);
-                console.log(index);
+                // Populate fields
                 $("#articleTitle"+(i+1)).text(response.results[index].title);
                 $("#articleTitle"+(i+1)).attr("href", response.results[index].url);
                 $("#articlePreview"+(i+1)).attr("src", response.results[index].multimedia[0].url);
@@ -30,7 +31,7 @@ function renderNews () {
 renderNews();
 
 // ===================================================================================
-
+// Notes Section
 var noteList = [];
 
 function saveNotes (event) {
@@ -98,7 +99,7 @@ $("#clearButton").on("click", clearNotes);
 $("#newButton").on("click", newNote);
 
 // ===================================================================================
-
+// Reference Section
 
 var hyperlink = $(".hyperlink");
 var link = [
@@ -117,7 +118,7 @@ function reference() {
 reference();
 
 // ===================================================================================
- 
+//  Make You Smile Section
 
 function getJoke () {
     var queryURL = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=racist,sexist,explicit&type=twopart";
@@ -135,6 +136,7 @@ getJoke();
 
 
 //=============================================================================================
+// Inspirational Quotes
 
 //Code for fix of cross-origin error.
 jQuery.ajaxPrefilter(function (options) {
@@ -160,11 +162,8 @@ function getQuote () {
 
 getQuote();
 
-//============================================================================================
-
-
 // ===================================================================================
-
+// Weather Section
 
 var userInput;
 var buttonPress = $(".userSearch");
