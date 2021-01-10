@@ -199,3 +199,9 @@ function searchWeather() {
 
 // ===================================================================================
 
+var toggle = $(".toggle");
+
+toggle.on("click", function () {
+    document.body.classList.toggle("darkMode");
+    // $(".tile").addClass("is-dark");
+})

@@ -9,7 +9,21 @@
 }
 .noteButtons {
     margin: 5px;
-=======
+/* =======
 .document {
-    align-content:center
+    align-content:center */
+}
+
+
+/* ============================ */
+
+body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+}
+
+.darkMode {
+    background-color: black;
+    color: white;
 }
