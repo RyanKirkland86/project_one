@@ -118,11 +118,18 @@ jQuery.ajaxPrefilter(function (options) {
       options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
     }
   });
-  
 
 function getQuote () {
-
+    var queryURL = "https://zenquotes.io/api/today";
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+    })
+        .then(function(response) {
+            console.log(response);
+        });
 }
+ getQuote();
 
 var userInput;
 var buttonPress = $(".userSearch");
