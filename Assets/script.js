@@ -132,9 +132,9 @@ function getQuote () {
 //Need to add HTML modifiers for Quote of the Day section. Where do we want it?
 //Also don't forget to add Zen Quote attribution to HTML!
         .then(function(response) {
-            console.log(response);
-            $("#qotdQ").text(response.q);
-            $("#qotdA").text(response.a);
+            var res = JSON.parse(response);
+            $("#qotdQ").html(res[0].q);
+            $("#qotdA").text(res[0].a);
         });
 }
 
