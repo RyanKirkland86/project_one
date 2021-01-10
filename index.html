@@ -8,14 +8,15 @@
     <link rel="stylesheet" type="text/css" href="Assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    
+
 </head>
 
 
@@ -24,7 +25,7 @@
         <div class="hero-body has-text-centered">
             <div class="container">
                 <h1 class="title animate__animated animate__bounce">
-                    Programmer Homepage 
+                    Programmer Homepage
                 </h1>
                 <h2 class="subtitle">
                     Dark Mode
@@ -32,169 +33,175 @@
 
                 </h2>
             </div>
-                
+
         </div>
     </section>
 
-</head>
+    </head>
 
 
-<body>
-    <!-- REFERENCE LINKS, WEATHER -->
-    <!-- <div class="tile is-ancestor"> -->
+    <body>
+        <!-- REFERENCE LINKS, WEATHER -->
+        <!-- <div class="tile is-ancestor"> -->
         <!-- REFERENCE LINKS -->
         <!-- <div class="tile is-parent"> -->
-    <div class="tile is-ancestor">
-        <div class="tile is-parent has-text-centered">
-            <article class="tile is-child box">
-                <p class="title refPages">Reference Links</p>
-                <p class="subtitle">Image hyperlinks for all programmers most used reference pages</p>
-                <div class="hyperlink">
-                </div>
-
-            </article>
-        </div>
-        <!-- WEATHER -->
-        <div class="tile is-parent">
-            <article class="tile is-child box has-text-centered">
-                <p class="title weather">Weather <input class="inputsm inputSearch" type="text" placeholder="">
-                    <button class="userSearch"><i class="fas fa-search"></i></button>
-                </p>
-
-                <div class="columns">
-                    <div class="columnOne">
-
-                        <!-- First column -->
+        <div class="tile is-ancestor">
+            <div class="tile is-parent has-text-centered">
+                <article class="tile is-child box">
+                    <p class="title refPages">Reference Links</p>
+                    <p class="subtitle">Image hyperlinks for all programmers most used reference pages</p>
+                    <div class="hyperlink">
                     </div>
-                    <div class="columnTwo">
 
-                        <!-- Second column -->
-                    </div>
-                    <div class="columnThree">
-
-                        <!-- Third column -->
-                    </div>
-                </div>
-            </article>
-        </div>
-    </div>
-
-    <!-- QUOTES, NOTES, NEWS, SMILE -->
-    <div class="tile is-ancestor">
-        <div class="tile is-vertical is-8">
-            <div class="tile">
-                <!-- INSPIRATIONAL QUOTES -->
-                <div class="tile is-parent is-vertical is-mobile">
-                <div class="tile is-parent is-vertical has-text-centered">
-                    <article class="tile is-child box">
-                        <p class="title quote" id="qotdQ"></p>
-                        <p class="subtitle" id="qotdA"></p>
-                        <p>Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a></p>
-                        </article>
-                </div>
-                <div class="tile is-child">
-                    <article class="tile is-child box has-text-centered">
-                        <p class="title weather">Find a Random GIF<input class="inputsm gifSearch" type="text" placeholder="">
-                            <button class="userPick"><i class="fas fa-search"></i></button>
-                        </p>
-                        <div class="gifBox" id="gifBox"></div>
-                    </article>
-                </div>
-                </div>
-
-                <!-- NOTES -->
-                <div class="tile is-parent">
-                    <article class="tile is-child is-mobile box">
-                        <p class="title notes">Notes</p>
-                        <p class="subtitle">Section</p>
-                        <input class="input is-half" type="text" placeholder="Note Title" id="noteTitle">
-                        <button class="button is-primary" id="saveButton">Save</button>
-                        <button class="button is-primary" id="newButton">+</button>
-                        <textarea class="textarea" placeholder="Note Body" rows="10" id="noteBody"></textarea>
-                        <div id="buttonArea"></div>
-                        <button class="button" id="clearButton">Clear</button>
-                    </article>
-                </div>
+                </article>
             </div>
-            <!-- SOMETHING TO SMILE ABOUT -->
+            <!-- WEATHER -->
             <div class="tile is-parent">
                 <article class="tile is-child box has-text-centered">
-                    <p class="title be-happy">Something to Smile About!</p>
-                    <p class="joke" id="jokeSetup"></p>
-                    <p class="joke" id="jokeDelivery"></p>
-                    <div class="content">
+                    <p class="title weather">Weather <input class="inputsm inputSearch" type="text" placeholder="">
+                        <button class="userSearch"><i class="fas fa-search"></i></button>
+                    </p>
 
+                    <div class="columns">
+                        <div class="columnOne">
+
+                            <!-- First column -->
+                        </div>
+                        <div class="columnTwo">
+
+                            <!-- Second column -->
+                        </div>
+                        <div class="columnThree">
+
+                            <!-- Third column -->
+                        </div>
                     </div>
                 </article>
             </div>
         </div>
 
-        <!-- NEWS SECTION -->
-        <div class="tile is-parent">
-            <article class="tile is-child box has-text-centered">
-                <div class="content">
-                    <p class="title news">Tech News</p>
-                    <div class="content">
-                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner carousel-dark">
-                              <div class="carousel-item active">
-                                <p class="subtitle">
-                                    <a id="articleTitle1"></a>
+        <!-- QUOTES, NOTES, NEWS, SMILE -->
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-8">
+                <div class="tile">
+                    <!-- INSPIRATIONAL QUOTES -->
+                    <div class="tile is-parent is-vertical is-mobile">
+                        <div class="tile is-parent is-vertical has-text-centered">
+                            <article class="tile is-child box">
+                                <p class="title quote" id="qotdQ"></p>
+                                <p class="subtitle" id="qotdA"></p>
+                                <p>Inspirational quotes provided by <a href="https://zenquotes.io/"
+                                        target="_blank">ZenQuotes API</a></p>
+                            </article>
+                        </div>
+                        <div class="tile is-child">
+                            <article class="tile is-child box has-text-centered">
+                                <p class="title weather">Find a Random GIF<input class="inputsm gifSearch" type="text"
+                                        placeholder="">
+                                    <button class="userPick"><i class="fas fa-search"></i></button>
                                 </p>
-                                <a id="previewLink1">
-                                    <img class="carouselImage" id="articlePreview1" alt="Preview1" />
-                                </a>
-                                <div class="content" id="articleContent1"></div>
-                              </div>
-                              <div class="carousel-item">
-                                <p class="subtitle">
-                                    <a id="articleTitle2"></a>
-                                </p>
-                                <a id="previewLink2">
-                                    <img class="carouselImage" id="articlePreview2" alt="Preview2" />
-                                </a>
-                                <div class="content" id="articleContent2"></div>
-                              </div>
-                              <div class="carousel-item">
-                                <p class="subtitle">
-                                    <a id="articleTitle3"></a>
-                                </p>
-                                <a id="previewLink3">
-                                    <img class="carouselImage" id="articlePreview3" alt="Preview3" />
-                                </a>
-                                <div class="content" id="articleContent3"></div>
-                              </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Next</span>
-                            </a>
-                          </div>
+                                <div class="gifBox" id="gifBox"></div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- NOTES -->
+                    <div class="tile is-parent">
+                        <article class="tile is-child is-mobile box">
+                            <p class="title notes">Notes</p>
+                            <p class="subtitle">Section</p>
+                            <input class="input is-half" type="text" placeholder="Note Title" id="noteTitle">
+                            <button class="button is-primary" id="saveButton">Save</button>
+                            <button class="button is-primary" id="newButton">+</button>
+                            <textarea class="textarea" placeholder="Note Body" rows="10" id="noteBody"></textarea>
+                            <div id="buttonArea"></div>
+                            <button class="button" id="clearButton">Clear</button>
+                        </article>
                     </div>
                 </div>
+                <!-- SOMETHING TO SMILE ABOUT -->
+                <div class="tile is-parent">
+                    <article class="tile is-child box has-text-centered">
+                        <p class="title be-happy">Something to Smile About!</p>
+                        <p class="joke" id="jokeSetup"></p>
+                        <p class="joke" id="jokeDelivery"></p>
+                        <div class="content">
+
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- NEWS SECTION -->
+            <div class="tile is-parent">
+                <article class="tile is-child box has-text-centered">
+                    <div class="content">
+                        <p class="title news">Tech News</p>
+                        <div class="content">
+                            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner carousel-dark">
+                                    <div class="carousel-item active">
+                                        <p class="subtitle">
+                                            <a id="articleTitle1"></a>
+                                        </p>
+                                        <a id="previewLink1">
+                                            <img class="carouselImage" id="articlePreview1" alt="Preview1" />
+                                        </a>
+                                        <div class="content" id="articleContent1"></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <p class="subtitle">
+                                            <a id="articleTitle2"></a>
+                                        </p>
+                                        <a id="previewLink2">
+                                            <img class="carouselImage" id="articlePreview2" alt="Preview2" />
+                                        </a>
+                                        <div class="content" id="articleContent2"></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <p class="subtitle">
+                                            <a id="articleTitle3"></a>
+                                        </p>
+                                        <a id="previewLink3">
+                                            <img class="carouselImage" id="articlePreview3" alt="Preview3" />
+                                        </a>
+                                        <div class="content" id="articleContent3"></div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <!-- YOUTUBE PROGRAMMER'S PLAYLIST -->
+        <div class="tile is-parent is">
+            <article class="tile is-child box has-text-centered">
+                <p class="title youtube">Youtube Videos</p>
+                <p class="subtitle">Programmers Playlist</p>
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/videoseries?list=PLoDp0GsTmLgBdVNHqcavLhjk4M19YDj70"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="video"></iframe>
             </article>
         </div>
-    </div>
-    <!-- YOUTUBE PROGRAMMER'S PLAYLIST -->
-    <div class="tile is-parent is">
-        <article class="tile is-child box has-text-centered">
-            <p class="title youtube">Youtube Videos</p>
-            <p class="subtitle">Programmers Playlist</p>
-            <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/videoseries?list=PLoDp0GsTmLgBdVNHqcavLhjk4M19YDj70" frameborder="0"
-                allow="autoplay; encrypted-media" allowfullscreen class="video"></iframe>
-        </article>
-    </div>
-    </div>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="Assets/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="Assets/script.js"></script>
 
-</body>
+    </body>
 
 </html>

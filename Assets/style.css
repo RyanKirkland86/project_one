@@ -27,3 +27,11 @@ body {
 .document {
     align-content:center;
 }
+
+.columnOne {
+    background: lightgrey;
+    border-style: hidden;
+    color: white;
+    margin-left: 8%;
+    margin-right: 8%;
+}
