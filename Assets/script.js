@@ -2,18 +2,20 @@
 // ===================================================================================
 
 function renderNews () {
-    var queryURL = "https://api.nytimes.com/svc/topstories/v2/science.json?api-key=rBdT9Ta3VCBY52rY43X4LfdNrg58vknE";
+    var queryURL = "https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=rBdT9Ta3VCBY52rY43X4LfdNrg58vknE";
     $.ajax({
         url: queryURL,
         method: "GET",
         headers: { 'X-Requested-With': 'XMLHttpRequest' }
       })
         .then(function(response) {
-            $("#articleTitle").text(response.results[0].title);
-            $("#articleTitle").attr("href", response.results[0].url);
-            $("#articlePreview").attr("src", response.results[0].multimedia[0].url);
-            $("#previewLink").attr("href", response.results[0].multimedia[0].url);
-            $("#articleContent").text(response.results[0].abstract);
+            for (var i=0; i<3; i++) {
+                $("#articleTitle"+(i+1)).text(response.results[i].title);
+                $("#articleTitle"+(i+1)).attr("href", response.results[i].url);
+                $("#articlePreview"+(i+1)).attr("src", response.results[i].multimedia[i].url);
+                $("#previewLink"+(i+1)).attr("href", response.results[i].multimedia[i].url);
+                $("#articleContent"+(i+1)).text(response.results[i].abstract);
+            }    
     });
 }
 
