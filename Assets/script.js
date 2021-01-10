@@ -153,7 +153,14 @@ gifSearch.on("click", function () {
     getGif();
 })
 
+function getGif() {
+    var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=wslWpWhssAgYDK6zVXacBDsacT47flr4&tag=" + userPick + "&rating=g";
 
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+}
 
 // ===================================================================================
 
