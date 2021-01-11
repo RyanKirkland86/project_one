@@ -7,7 +7,6 @@ function renderNews () {
     $.ajax({
         url: queryURL,
         method: "GET",
-        headers: { 'X-Requested-With': 'XMLHttpRequest' }
       })
         .then(function(response) {
             // This logic is to randomly select a news story, and make sure it hasn't been selected already.
@@ -256,9 +255,33 @@ function searchWeather() {
 
 // ===================================================================================
 
+jQuery.fn.toggleAttr = function(attr) {
+    return this.each(function() {
+     var $this = $(this);
+     $this.attr(attr) ? $this.removeAttr(attr) : $this.attr(attr, attr);
+    });
+   };
+
 var toggle = $(".toggle");
 
+document.body.classList.toggle("darkMode");
+$("p").attr("style", "color: black");
+
 toggle.on("click", function () {
-    document.body.classList.toggle("darkMode");
+    // document.body.classList.toggle("darkMode");
+    $(".tile.box").toggleClass("has-background-dark");
+    $(".tile.ancestor").toggleClass("has-background-grey");
+    if ($("p").attr("style")==="color: black") {
+        $("p").attr("style", "color: white");
+        $(".content").attr("style", "color: white");
+        $("h1").attr("style", "color: white");
+        $("h2").attr("style", "color: white");
+    }
+    else {
+        $("p").attr("style", "color: black");
+        $(".content").attr("style", "color: black");
+    }
+    $(".hero").toggleClass("is-dark");
     // $(".tile").addClass("is-dark");
-})
+});
+
