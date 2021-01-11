@@ -24,6 +24,10 @@ body {
     color: white;
 }
 
+.lightMode {
+    color: white;
+}
+
 .document {
     align-content:center;
 }
