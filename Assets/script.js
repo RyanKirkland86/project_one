@@ -235,19 +235,19 @@ function searchWeather() {
         columnOne.append("<p>" + "<strong>" + (moment().format("M/DD/YY")) + "</strong>");
         columnOne.append("<img id='image1'>");
         $("#image1").attr("src", "http://openweathermap.org/img/wn/"+ response.list[0].weather[0].icon + ".png");
-        columnOne.append("<p>" + "Temperature: " + response.list[0].main.temp + "</p>");
+        columnOne.append("<p>" + "Temperature: <br>" + response.list[0].main.temp + " °F</p>");
         columnOne.append("<p>" + "Humidity: " + response.list[0].main.humidity + "</p>");
 
         columnTwo.append("<p>" + "<strong>" + (moment().add(1, 'days').format("M/DD/YY")) + "</strong>");
         columnTwo.append("<img id='image2'>");
         $("#image2").attr("src", "http://openweathermap.org/img/wn/"+ response.list[1].weather[0].icon + ".png");
-        columnTwo.append("<p>" + "Temperature: " + response.list[1].main.temp + "</p>");
+        columnTwo.append("<p>" + "Temperature: <br>" + response.list[1].main.temp + " °F</p>");
         columnTwo.append("<p>" + "Humidity: " + response.list[1].main.humidity + "</p>");
 
         columnThree.append("<p>" + "<strong>" + (moment().add(2, 'days').format("M/DD/YY")) + "</strong>"); 
         columnThree.append("<img id='image3'>");
         $("#image3").attr("src", "http://openweathermap.org/img/wn/"+ response.list[2].weather[0].icon + ".png");
-        columnThree.append("<p>" + "Temperature: " + response.list[2].main.temp + "</p>");
+        columnThree.append("<p>" + "Temperature: <br>" + response.list[2].main.temp + " °F</p>");
         columnThree.append("<p>" + "Humidity: " + response.list[2].main.humidity + "</p>");
 
 
