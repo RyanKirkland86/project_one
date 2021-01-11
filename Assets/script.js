@@ -110,10 +110,10 @@ var link = [
 ]
 
 function reference() {
-        hyperlink.append("<a href=" + link[0] + ">" + "<img src='Assets/w3.png' width='200' height = '132'" + "</a>");
-        hyperlink.append("<a href=" + link[1] + ">" + "<img src='Assets/mdn.png' width='200' height = '132'" + "</a>");
-        hyperlink.append("<a href=" + link[2] + ">" + "<img src='Assets/stack.png' width='200' height = '132'" + "</a>");
-        hyperlink.append("<a href=" + link[3] + ">" + "<img src='Assets/github.png' width='200' height = '132'" + "</a>");
+        hyperlink.append("<a href=" + link[0] + ">" + "<img src='Assets/Images/w3.png' width='200' height = '132'" + "</a>");
+        hyperlink.append("<a href=" + link[1] + ">" + "<img src='Assets/Images/mdn.png' width='200' height = '132'" + "</a>");
+        hyperlink.append("<a href=" + link[2] + ">" + "<img src='Assets/Images/stack.png' width='200' height = '132'" + "</a>");
+        hyperlink.append("<a href=" + link[3] + ">" + "<img src='Assets/Images/github.png' width='200' height = '132'" + "</a>");
 }
 reference();
 
@@ -219,6 +219,11 @@ function searchWeather() {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
+
+
+
+
+        
         console.log(response);
         var columnOne = $(".columnOne");
         var columnTwo = $(".columnTwo");
