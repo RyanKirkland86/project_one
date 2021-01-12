@@ -128,6 +128,7 @@ function getJoke () {
         method: "GET",
     })
         .then(function(response) {
+            console.log(response);
             $("#jokeSetup").text(response.setup);
             $("#jokeDelivery").text(response.delivery);
         });
