@@ -255,14 +255,15 @@ function searchWeather() {
 
 // ===================================================================================
 
-var toggle = $(".toggle");
+var toggle = $(".button.is-round");
 
-document.body.classList.toggle("darkMode");
 $("p").attr("style", "color: black");
+$(".is-ancestor").toggleClass("has-background-dark");
 
 toggle.on("click", function () {
-    // document.body.classList.toggle("darkMode");
+    document.body.classList.toggle("darkMode");
     $(".tile.box").toggleClass("has-background-dark");
+    $(".is-ancestor").toggleClass("has-background-dark");
     $(".tile.ancestor").toggleClass("has-background-grey");
     if ($("p").attr("style")==="color: black") {
         $("p").attr("style", "color: white");
