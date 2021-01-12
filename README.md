@@ -8,7 +8,7 @@ An all-in-one homepage that keeps window management to a minimum. Site includes 
 
 ## Site Picture
 
-![Site](Assets/images/screenshot.png)
+![Site](https://github.com/michaelanthonyyy/project_one/blob/main/Assets/Images/screenshot.png)
 
 <br>
 <br>
