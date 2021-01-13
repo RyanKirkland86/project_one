@@ -90,6 +90,11 @@ News API call and function to generate random indices after the response is rece
 * [Animate.css](https://animate.style/)
 * [Bootstrap](https://getbootstrap.com)
 * [Moment](https://momentjs.com/docs/)
+* [ZenQuotesAPI](https://zenquotes.io/)
+* [JokeAPI](https://sv443.net/jokeapi/v2/?ref=apilist.fun)
+* [GIPHY](https://developers.giphy.com/docs/sdk/)
+* [NYTimesAPI](https://developer.nytimes.com/apis)
+* [OpenWeatherMapAPI](https://openweathermap.org/api)
 
 <br>
 <br>
